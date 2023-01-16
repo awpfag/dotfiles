@@ -1,0 +1,2 @@
+playlist_display_mode = "classic"
+song_list_format = "{$6{%t}{$R$7%l}}"
