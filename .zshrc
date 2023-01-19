@@ -45,6 +45,7 @@ fi
 #aliases
 alias ytdlmp3='yt-dlp -x --audio-format mp3'
 alias ytdl='yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4"'
+alias novid='mpv --no-video'
 alias sx='startx'
 alias btop='btop --utf-force'
 alias ls='ls --color=auto'
