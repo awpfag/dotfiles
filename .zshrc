@@ -53,8 +53,6 @@ alias pacman='pacman --color=auto'
 alias yay='yay --color=auto'
 alias cvd='civ-v-drafter'
 alias wgetdir='wget -r -np -R "index.html*"'
-alias clearcache='sudo bash ~/.local/bin/clearcache.sh'
-alias highpower='sudo cpupower frequency-set --governor performance'
 alias git-key='xclip ~/documents/git-key -selection clipboard'
 
 up(){
