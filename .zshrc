@@ -49,6 +49,8 @@ alias novid='mpv --no-video'
 alias sx='startx'
 alias btop='btop --utf-force'
 alias ls='ls --color=auto'
+alias pacman='pacman --color=auto'
+alias yay='yay --color=auto'
 alias cvd='civ-v-drafter'
 alias wgetdir='wget -r -np -R "index.html*"'
 alias clearcache='sudo bash ~/.local/bin/clearcache.sh'
@@ -56,7 +58,7 @@ alias highpower='sudo cpupower frequency-set --governor performance'
 alias git-key='xclip ~/documents/git-key -selection clipboard'
 
 up(){
-	yay -Syyu
+	yay -Syyu --answerclean All --answerdiff None --answeredit None
 	sudo pacman -Rs $(pacman -Qqtd)
 }
 
