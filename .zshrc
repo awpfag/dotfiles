@@ -56,7 +56,7 @@ alias wgetdir='wget -r -np -R "index.html*"'
 alias git-key='xclip ~/documents/git-key -selection clipboard'
 
 up(){
-	yay -Syyu --answerclean All --answerdiff None --answeredit None
+	yay -Syyu --answerclean All --answerdiff None --answeredit None --answerclean All
 	sudo pacman -Rs $(pacman -Qqtd)
 }
 
