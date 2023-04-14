@@ -34,12 +34,14 @@ case "$ext" in
 	sass) sassc -a "$file" "$base.css" ;;
 	scad) openscad -o "$base".stl "$file" ;;
 	sent) setsid -f sent "$file" 2>/dev/null ;;
-	tex) textype "$file";;
+	tex) textype "$file"
+	     echo -e "\n words: $(cat "$file" | wc -w)"
+	     lines_with_colour="$(cat $file | grep '\\color{' | wc -w)"
+	     lines_without_colour="$(cat "$file" | grep --invert-match '\\' | wc -w)"
+	     words_without_headings="$(($lines_with_colour + $lines_without_colour))"
+             echo -e "\n words without headings: $words_without_headings"
+	     ;;
 	*) sed -n '/^#!/s/^#!//p; q' "$file" | xargs -r -I % "$file" ;;
 esac
 
-echo -e "\n words: $(cat "$file" | wc -w)"
-lines_with_colour="$(cat $file | grep '\\color{' | wc -w)"
-lines_without_colour="$(cat "$file" | grep --invert-match '\\' | wc -w)"
-words_without_headings="$(($lines_with_colour + $lines_without_colour))"
-echo -e "\n words without headings: $words_without_headings"
+

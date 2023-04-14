@@ -1,4 +1,4 @@
 #!/bin/sh
-temp="$(sensors | grep Other | awk '{printf $2"\n"}' | sed 's/+//g' | sed 's/.0//g')"
+temp="$(sensors | grep 'Package id 0' | awk '{printf $4"\n"}' | sed 's/+//g')"
 icon=""
 echo "$icon $temp"
