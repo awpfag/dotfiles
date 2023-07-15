@@ -43,8 +43,8 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 fi
 
 #aliases
-alias ytdlmp3='yt-dlp -x --audio-format mp3'
-alias ytdl='yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4"'
+alias ytdlmp3='yt-dlp -x --audio-format mp3 -o "%(title)s.%(ext)s"'
+alias ytdl='yt-dlp -ciw -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4" -o "%(title)s.%(ext)s"'
 alias novid='mpv --no-video'
 alias sx='startx'
 alias btop='btop --utf-force'
@@ -54,9 +54,14 @@ alias yay='yay --color=auto'
 alias cvd='civ-v-drafter'
 alias wgetdir='wget -r -np -R "index.html*"'
 alias git-key='xclip ~/documents/git-key -selection clipboard'
+alias neofetch='neofetch --ascii_distro arch_old --colors 12 15 15 12 15 15 --ascii_colors 12 15 | sed "s|470/480/570/570X/580/580X/590|580|g"'
+zero(){
+	drive="$1"
+	sudo dd if=/dev/random of=$drive bs=16M status=progress && sync
+}
 
 up(){
-	yay -Syyu --answerclean All --answerdiff None --answeredit None --answerclean All
+	paru -Syyu
 	sudo pacman -Rs $(pacman -Qqtd)
 }
 
