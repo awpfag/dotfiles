@@ -50,32 +50,30 @@ alias novid='mpv --no-video'
 alias sx='startx'
 alias btop='btop --utf-force'
 alias ls='ls --color=auto'
-alias pacman='pacman --color=auto'
-alias yay='yay --color=auto'
 alias cvd='civ-v-drafter'
 alias wgetdir='wget -r -np -R "index.html*"'
 alias git-key='xclip ~/documents/git-key -selection clipboard'
-alias neofetch='neofetch --ascii_distro arch_old --colors 12 15 15 12 15 15 --ascii_colors 12 15 | sed "s|470/480/570/570X/580/580X/590|580|g"'
+alias neofetch='neofetch --ascii_distro redhat'
+
+#functions
 zero(){
 	drive="$1"
 	sudo dd if=/dev/random of=$drive bs=16M status=progress && sync
 }
 
 up(){
-	paru -Syyu
-	sudo pacman -Rs $(pacman -Qqtd)
+	sudo dnf update
+	flatpak update
 }
 
 temp(){
 	all="$(sensors)"
 	cpu="$(echo $all | grep 'Package id 0' | awk '{printf $4"\n"}' | sed 's/+//g')"
-	gpu="$(echo $all | grep 'edge' | awk '{printf $2"\n"}' | sed 's/+//g')"
 	
 	echo "cpu: $cpu"
-	echo "gpu: $gpu"
 }
 
 export PATH=$HOME"/platform-tools:$PATH"
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 c
