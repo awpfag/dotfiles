@@ -21,6 +21,6 @@ if [ "$th" = "" ]; then
 	th="th"
 fi
 
-date="$(date "+%a %e"$th" %b, %H:%M")"
+date="$(date "+%a %d"$th" %b, %H:%M")"
 icon=""
 echo "$icon $date"

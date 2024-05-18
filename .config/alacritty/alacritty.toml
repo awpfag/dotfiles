@@ -44,5 +44,6 @@ style = "Regular"
 [window.dimensions]
 columns = 85
 lines = 25
+
 [window]
-opacity = 0.95
+opacity = 0.9

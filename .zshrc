@@ -53,7 +53,6 @@ alias ls='ls --color=auto'
 alias cvd='civ-v-drafter'
 alias wgetdir='wget -r -np -R "index.html*"'
 alias git-key='xclip ~/documents/git-key -selection clipboard'
-alias neofetch='neofetch --ascii_distro redhat'
 
 #functions
 zero(){
@@ -62,8 +61,7 @@ zero(){
 }
 
 up(){
-	sudo dnf update
-	flatpak update
+	yay -Syyu
 }
 
 temp(){
@@ -74,6 +72,6 @@ temp(){
 }
 
 export PATH=$HOME"/platform-tools:$PATH"
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 c

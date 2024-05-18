@@ -42,22 +42,22 @@ super + F3
 super + F4
 	playerctl --player=mpd stop; pkill -RTMIN+20 dwmblocks
 
+# volume up/down
+XF86Audio{Raise,Lower}Volume
+	pamixer -{i,d} 5; pkill -RTMIN+10 dwmblocks
+
+XF86AudioMute
+	pamixer -t; pkill -RTMIN+10 dwmblocks
 
 ## opening shit ##
 super + Return
-	WINIT_X11_SCALE_FACTOR=1.66 alacritty
+	WINIT_X11_SCALE_FACTOR=1 alacritty
 
 super + b
-	librewolf
+	firefox
 
 super + c
 	discord
 
-super + g
-	steam --silent
-
-super + shift + g
-	prismlauncher
-
-super + p
-	WINIT_X11_SCALE_FACTOR=1.66 alacritty -e ncmpcpp
+super + e
+	pcmanfm
